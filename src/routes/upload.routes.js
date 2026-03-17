@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/", protect, admin, upload.single("image"), (req, res) => {
 
   res.json({
-    imageUrl: `/uploads/${req.file.filename}`
+    imageUrl: req.file.path
   });
 
 });
