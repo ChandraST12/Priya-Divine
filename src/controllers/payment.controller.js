@@ -14,7 +14,7 @@ export const createPaymentOrder = async (req, res) => {
       return res.status(400).json({ message: "Cart is empty" });
     }
 
-    const amount = cart.totalPrice; // ✅ trusted source
+    const amount = cart.totalPrice; //  trusted source
 
     const options = {
       amount: amount * 100,
@@ -52,7 +52,7 @@ export const verifyPayment = async (req, res) => {
     return res.status(400).json({ success: false });
   }
 
-  // ✅ prevent duplicate
+  // prevent duplicate
   const existingOrder = await Order.findOne({
     razorpay_payment_id
   });
@@ -69,7 +69,7 @@ export const verifyPayment = async (req, res) => {
     return res.status(400).json({ message: "Cart empty" });
   }
 
-  // ✅ validate amount
+  //  validate amount
   const calculatedAmount = cart.items.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
