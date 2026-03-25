@@ -14,7 +14,7 @@ export const createPaymentOrder = async (req, res) => {
       return res.status(400).json({ message: "Cart is empty" });
     }
 
-    const amount = cart.totalPrice; //  trusted source
+    const amount = cart.totalPrice; 
 
     const options = {
       amount: amount * 100,

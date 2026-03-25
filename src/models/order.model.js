@@ -45,8 +45,9 @@ const orderSchema = new mongoose.Schema(
   },
 
   paymentMethod: {
-    type: String,
-    default: "COD"
+  type: String,
+  enum: ["COD", "ONLINE"],
+  default: "COD"
   },
 
   paymentStatus: {
@@ -79,6 +80,6 @@ const orderSchema = new mongoose.Schema(
 );
 
 orderSchema.index({ user: 1 });
-orderSchema.index({ razorpay_payment_id: 1 });
+orderSchema.index({ razorpay_payment_id: 1 }, { unique: true });
 
 export default mongoose.model("Order", orderSchema);
