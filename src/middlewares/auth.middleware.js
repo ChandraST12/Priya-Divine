@@ -2,10 +2,6 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 import Token from "../models/token.model.js";
 
-import jwt from "jsonwebtoken";
-import User from "../models/user.model.js";
-import Token from "../models/token.model.js"; // optional (for logout blacklist)
-
 export const protect = async (req, res, next) => {
   try {
 
