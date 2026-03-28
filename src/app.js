@@ -45,13 +45,13 @@ app.use(cookieParser());
 app.use("/uploads", express.static("uploads"));
 
 
-app.use("/api/auth", authRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/upload", uploadRoutes);
-app.use("/api/cart", cartRoutes);
-app.use("/api/orders", orderRoutes);
-app.use("/api/payment", paymentRoutes);
-app.use("/api/admin", adminRoutes);
+app.use("/auth", authRoutes);
+app.use("/products", productRoutes);
+app.use("/upload", uploadRoutes);
+app.use("/cart", cartRoutes);
+app.use("/orders", orderRoutes);
+app.use("/payment", paymentRoutes);
+app.use("/admin", adminRoutes);
 
 
 

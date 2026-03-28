@@ -1,6 +1,8 @@
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv"
+import Token from "../models/token.model.js";
+
 dotenv.config();
 const generateToken = (id) => {
 
@@ -104,4 +106,21 @@ export const loginUser = async (req, res) => {
       message: "Server error"
     });
   }
+};
+
+
+export const logoutUser = async (req, res) => {
+
+  const token = req.headers.authorization?.split(" ")[1];
+
+  if (!token) {
+    return res.status(400).json({ message: "No token provided" });
+  }
+
+  await Token.create({
+    token,
+    expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+  });
+
+  res.json({ message: "Logged out successfully" });
 };
