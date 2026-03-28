@@ -1,11 +1,11 @@
-#  PriyaDivine Backend
+#  PriyaDivine
 
-A production-ready e-commerce backend built using the MERN stack, designed for scalability, security, and real-world usage.
+A production-ready e-commerce  built using the MERN stack, designed for scalability, security, and real-world usage.
 
 ---
 
-##  Overview
-
+##  Overview 
+###  Backend :
 PriyaDivine is a fully functional backend system for an e-commerce platform focused on devotional and handmade products. It handles authentication, product management, cart operations, order processing, payments, and admin analytics.
 
 This backend is designed with **production-level architecture**, including transaction safety, inventory management, and secure API handling.
