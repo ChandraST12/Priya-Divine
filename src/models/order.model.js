@@ -80,6 +80,6 @@ const orderSchema = new mongoose.Schema(
 );
 
 orderSchema.index({ user: 1 });
-orderSchema.index({ razorpay_payment_id: 1 }, { unique: true });
+// orderderSchema.index({ razorpay_payment_id: 1 }, { unique: true });
 
 export default mongoose.model("Order", orderSchema);
