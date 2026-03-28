@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import cookieParser from "cookie-parser";
-
+import dotenv from "dotenv"
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 
@@ -16,6 +16,7 @@ import adminRoutes from "./routes/admin.routes.js";
 
 import { errorHandler } from "./middlewares/error.middleware.js";
 
+dotenv.config();
 const app = express();
 
 
@@ -31,7 +32,7 @@ app.use(limiter);
 
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  origin: process.env.CLIENT_URL ,
   credentials: true
 }));
 
